@@ -7,12 +7,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class SQLApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(SQLApplication.class.getResource("ventanaInicio.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 500);
+        stage.setTitle("SQL Ejecutor - Docker containers github fdgongora2");
+        stage.setMinWidth(600);
+        stage.setMinHeight(500);
         stage.setScene(scene);
         stage.show();
     }
