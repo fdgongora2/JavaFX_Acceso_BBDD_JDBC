@@ -36,6 +36,17 @@ public class InicioController {
             c = DriverManager.getConnection("jdbc:mariadb://localhost:5555/noinch?useSSL=false"
                     ,"adminer",
                     "adminer");;
+
+
+            // Borramos por si es una nueva consulta
+            if (! tvDatos.getColumns().isEmpty()) {
+                tvDatos.setItems(null);
+                tvDatos.getColumns().clear();
+                data.removeAll();
+
+            }
+
+
             //SQL FOR SELECTING ALL OF CUSTOMER
             String SQL = txtAreaConsulta.getText();
             //ResultSet
@@ -82,7 +93,7 @@ public class InicioController {
         } catch (Exception e) {
             e.printStackTrace();
             data.removeAll();
-            tvDatos.getColumns().removeAll();
+            tvDatos.getColumns().clear();
             tvDatos.setItems(null);
             System.out.println("Error on Building Data");
         }
